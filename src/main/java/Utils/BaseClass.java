@@ -10,7 +10,8 @@ public class BaseClass {
    public void setUp(){
      driver = DriverManages.getDriver();
      driver.get("https://www.saucedemo.com");
-     driver.getTitle();
+        String title = driver.getTitle();
+        System.out.println(title);
     }
 
     @AfterSuite
