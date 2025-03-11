@@ -14,22 +14,21 @@ public class DriverManages {
 
     // 1.getDriver
     public static WebDriver getDriver(){
-        if(driver==null){
-            //System.setProperty("webDriver.chrome.driver", "src/main/resources/chromedriver");
+        if (driver==null){
+            ///System.setProperty("webDriver.chrome.driver", "src/main/resources/chromedriver");
             WebDriverManager.chromedriver().setup();
-            driver=new ChromeDriver();
+            driver = new ChromeDriver();
             driver.manage().window().maximize();
 
         }
-
-    return driver;
+         return driver;
     }
 
     //2.Quit Driver
     public static void quitDriver(){
         if (driver != null) {
             driver.quit();
-           // driver = null;   //optional
+            driver = null;   //optional
         }
     }
 
