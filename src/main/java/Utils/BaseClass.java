@@ -17,6 +17,5 @@ public class BaseClass {
     @AfterSuite
     public void tearDown(){
         DriverManages.quitDriver();
-
     }
 }
