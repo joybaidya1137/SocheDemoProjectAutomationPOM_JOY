@@ -75,11 +75,13 @@ public class ProductsPage {
         System.out.println("Selected option:" +option);
 
     }
+
+
 // oporer eselectSortingOption1 and niche selectSortingOption1 same kaj kore
-    public void selectSortingOption1() {
+    public void selectSortingOption() {
         WebElement dropdown = driver.findElement(By.className("product_sort_container"));
         Select select = new Select(dropdown);
-        select.selectByValue("hilo"); // Selecting sorting option by value and(" Price (high to low)")
+        select.selectByVisibleText("Price (high to low)");// Selecting sorting option by value and(" Price (high to low)")
     }
 
 // dropDown  e productsTest ai method er jonno Loop Use korci

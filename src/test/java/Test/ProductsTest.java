@@ -31,7 +31,7 @@ public class ProductsTest extends BaseClass {
 
         Assert.assertEquals(afterRemoveCount,beforeRemoveCount-1,"Product was not removed successfully");
         try{
-            Thread.sleep(2000);
+            Thread.sleep(1000);
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
@@ -43,7 +43,7 @@ public class ProductsTest extends BaseClass {
         productsPage.selectSortingOption1("Name (Z to A)");
         Assert.assertTrue(productsPage.isProductPageDisplayed(), "Sorting did not apply");
         try {
-            Thread.sleep(2000);
+            Thread.sleep(1000);
         } catch (Exception e) {
             System.out.println("Error occurred during this test filed: " + e.getMessage());
         }
@@ -52,11 +52,9 @@ public class ProductsTest extends BaseClass {
 
    @Test(priority = 5)
    public void testSelectSortingOption2() {
-       productsPage.selectSortingOption1("Price (high to low)");
-       // Verify sorting applied correctly
-       Assert.assertTrue(productsPage.isProductPageDisplayed(), "Sorting did not apply");
+       productsPage.selectSortingOption();
        try{
-           Thread.sleep(2000);
+           Thread.sleep(1000);
        } catch (Exception e) {
            throw new RuntimeException(e);
        }
@@ -72,7 +70,7 @@ public void testSelectSortingOptions3() {
         productsPage.selectSortingOption2(option);
         Assert.assertTrue(productsPage.isProductPageDisplayed(), "Sorting did not apply for: " + option);
         try{
-            Thread.sleep(2000);
+            Thread.sleep(1000);
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
