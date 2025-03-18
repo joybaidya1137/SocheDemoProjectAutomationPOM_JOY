@@ -36,7 +36,57 @@ public class CartPage {
         }
     }
 
+    public void Checkout(){
+        WebElement checkout = driver.findElement(By.id("checkout"));
+        checkout.click();
 
+    }
+
+    // Locators for elements
+    private By firstNameField = By.id("first-name");
+    private By lastNameField = By.id("last-name");
+    private By postalCodeField = By.id("postal-code");
+    private By continueButton = By.id("continue");
+
+    // Actions (Methods)
+        public void enterFirstName (String firstName){
+        driver.findElement(firstNameField).sendKeys(firstName);
+    }
+
+        public void enterLastName (String lastName){
+        driver.findElement(lastNameField).sendKeys(lastName);
+    }
+
+        public void enterPostalCode (String postalCode){
+        driver.findElement(postalCodeField).sendKeys(postalCode);
+    }
+
+        public void clickContinue () {
+        driver.findElement(continueButton).click();
+    }
+
+        // Complete form submission process
+        public void fillCheckoutForm (String firstName, String lastName, String postalCode){
+        enterFirstName(firstName);
+        enterLastName(lastName);
+        enterPostalCode(postalCode);
+        clickContinue();
+    }
+
+
+
+    public void FinishButton(){
+        WebElement firstNameField = driver.findElement(By.id("finish"));
+        firstNameField.click();
+        WebElement completed = driver.findElement(By.xpath("/html/body/div/div/div/div[1]/div[2]/span"));
+        String message = completed.getText();
+        System.out.println("Checkout Message: " + message);
+
+        WebElement Thank = driver.findElement(By.className("complete-header"));
+        String actualMessage = Thank.getText();
+        System.out.println("Checkout Message: " + actualMessage);
+
+    }
 
 
 }
